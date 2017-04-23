@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" contents="text/html; charset=UTF-8" />
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap-theme.min.css}" rel="stylesheet" />
+
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+
+    <div th:each="message,idx : ${list}">
+        <div th:if="${idx.index%2 == 0}" class="panel panel-primary">
+            <div class="panel-heading" th:text="${idx.index}">hello</div>
+            <div class="panel-body" th:text="${message.info}"></div>
+        </div>
+
+        <div th:unless="${idx.index%2 == 0}" class="panel panel-warning">
+            <div class="panel-heading" th:text="${idx.index}">hello</div>
+            <div class="panel-body" th:text="${message.info}"></div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
